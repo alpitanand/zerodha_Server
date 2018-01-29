@@ -11,7 +11,7 @@ import re
 # mongodb://alpit_anand:DBADBADBA1@ds119028.mlab.com:19028/collect
 # mongodb://localhost:27017 when using locally
 data = []
-client = MongoClient('mongodb://alpit_anand:*************@ds119028.mlab.com:19028/collect')
+client = MongoClient('mongodb://alpit_anand:DBADBADBA1@ds119028.mlab.com:19028/collect')
 db = client.collect
 collection = db.stock_data
 cursor = collection.find({}).sort("CLOSE", -1)
