@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--code, name, open, high, low, close-->
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./static/mytemp.css">
+    <title> Zerodha </title>
+
+        <script>
+function validateForm() {
+    var x = document.getElementById("query").value;
+    if (x === "") {
+        alert("Name must be filled out");
+        return false
+
+    }
+
+}
+</script>
+
+</head>
+<body>
+
+<form name="myForm" action="/search"  onsubmit="return validateForm()" method="post">
+  <input id="query" type="text" name="sc_name" name="fname"  placeholder="Search.." />
+  <input id="button" type="submit" />
+</form>
+
+ {% block content %}
+<table style="width:100%">
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Open</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Close</th>
+
+    </tr>
+    {% for item in data %}
+    <tr>
+        <td>{{item['SC_CODE']}}</td>
+        <td>{{item['SC_NAME']}}</td>
+        <td>{{item['OPEN']}}</td>
+        <td>{{item['HIGH']}}</td>
+        <td>{{item['LOW']}}</td>
+        <td>{{item['CLOSE']}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+</body>
+</html>

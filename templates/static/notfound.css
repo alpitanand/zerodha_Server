@@ -1,0 +1,16 @@
+body{
+    padding: 10px;
+}
+div img{
+    max-width: 100%;
+    height: auto;
+}
+
+#text{
+    position: absolute;
+    left: 41%;
+    top:50%;
+    border: 2px brown dashed;
+    padding: 10px;
+
+}

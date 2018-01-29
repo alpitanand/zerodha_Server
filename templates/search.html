@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--code, name, open, high, low, close-->
+<html lang="en">
+<head>
+    <title>Search Result</title>
+    <link rel="stylesheet" type="text/css" href="./static/mytemp.css">
+
+</head>
+<body>
+
+
+ {% block content %}
+<table style="width:100%">
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Open</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Close</th>
+
+    </tr>
+
+    <tr>
+        <td>{{searched_data['SC_CODE']}}</td>
+        <td>{{searched_data['SC_NAME']}}</td>
+        <td>{{searched_data['OPEN']}}</td>
+        <td>{{searched_data['HIGH']}}</td>
+        <td>{{searched_data['LOW']}}</td>
+        <td>{{searched_data['CLOSE']}}</td>
+    </tr>
+
+</table>
+{% endblock %}
+
+</body>
+</html>
