@@ -8,9 +8,10 @@ import re
 # cherrypy.config.update({'server.socket_port': 3000})
 # cherrypy.engine.restart()
 
+# mongodb://alpit_anand:DBADBADBA1@ds119028.mlab.com:19028/collect
 # mongodb://localhost:27017 when using locally
 data = []
-client = MongoClient('mongodb://alpit_anand:DBADBADBA1@ds119028.mlab.com:19028/collect')
+client = MongoClient(' mongodb://alpit_anand:DBADBADBA1@ds119028.mlab.com:19028/collect')
 db = client.collect
 collection = db.stock_data
 cursor = collection.find({}).sort("CLOSE", -1)
@@ -27,7 +28,7 @@ class Dbextractor(object):
     @cherrypy.expose
     def index(self):
         env = Environment(
-            loader=FileSystemLoader(c_dir + "/templates"),
+            loader=FileSystemLoader(os.path.join(c_dir, 'templates')),
             autoescape=select_autoescape(['html', 'xml'])
         )
 
@@ -37,7 +38,7 @@ class Dbextractor(object):
     @cherrypy.expose
     def search(self, sc_name=None):
         env = Environment(
-            loader=FileSystemLoader(c_dir + "/templates"),
+            loader=FileSystemLoader(os.path.join(c_dir, 'templates')),
             autoescape=select_autoescape(['html', 'xml'])
         )
         print(sc_name)
