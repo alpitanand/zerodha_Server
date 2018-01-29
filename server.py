@@ -8,7 +8,7 @@ import re
 # cherrypy.config.update({'server.socket_port': 3000})
 # cherrypy.engine.restart()
 
-# mongodb://alpit_anand:DBADBADBA1@ds119028.mlab.com:19028/collect
+# mongodb://alpit_anand:**replace stars with password**@ds119028.mlab.com:19028/collect
 # mongodb://localhost:27017 when using locally
 data = []
 client = MongoClient('mongodb://alpit_anand:DBADBADBA1@ds119028.mlab.com:19028/collect')
